@@ -38,7 +38,7 @@ import {
 } from "@/components/ui/collapsible";
 
 const mainItems = [
-  { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Rooms", url: "/rooms", icon: BedDouble },
   { title: "Bookings", url: "/bookings", icon: CalendarCheck },
 ];
