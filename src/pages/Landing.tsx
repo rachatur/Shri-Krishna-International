@@ -63,7 +63,7 @@ const Landing = () => {
               onClick={() => navigate("/login")}
               className="bg-accent text-accent-foreground hover:bg-accent/90"
             >
-              Staff Login
+              Login
             </Button>
           </div>
         </div>
