@@ -1,10 +1,20 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { HotelSidebar } from "@/components/HotelSidebar";
-import { Bell, Search, User } from "lucide-react";
+import { Bell, Search, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export function HotelLayout({ children }: { children: React.ReactNode }) {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
     <SidebarProvider>
       <div className="flex min-h-screen w-full">
@@ -28,6 +38,9 @@ export function HotelLayout({ children }: { children: React.ReactNode }) {
               </Button>
               <Button variant="ghost" size="icon" className="rounded-full bg-secondary">
                 <User className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="icon" onClick={handleLogout} title="Logout">
+                <LogOut className="h-4 w-4" />
               </Button>
             </div>
           </header>
