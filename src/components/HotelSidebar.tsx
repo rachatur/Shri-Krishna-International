@@ -140,7 +140,7 @@ export function HotelSidebar() {
           </div>
           {!collapsed && (
             <div>
-              <h1 className="font-display text-base font-bold text-sidebar-accent-foreground">GrandStay</h1>
+              <h1 className="font-display text-base font-bold text-sidebar-accent-foreground">Sri Krishna International</h1>
               <p className="text-[10px] uppercase tracking-widest text-sidebar-foreground/50">Hotel Management</p>
             </div>
           )}
