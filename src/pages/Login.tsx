@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Hotel, Mail, Lock, Eye, EyeOff } from "lucide-react";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(() => localStorage.getItem("hotel_last_email") ?? "");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const { login } = useAuth();
@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    login();
+    login(email);
     navigate("/dashboard");
   };
 

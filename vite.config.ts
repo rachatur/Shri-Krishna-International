@@ -8,6 +8,14 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    proxy: {
+      // Dev-only proxy to avoid browser CORS issues when calling ERPNext
+      "/api": {
+        target: "http://localhost:1010",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
     hmr: {
       overlay: false,
     },
